@@ -1,0 +1,22 @@
+<html><head><title>cc</title>
+<style>*{text-align:center;}</style>
+</head><body>
+<div id="i0"></div><br>
+<button id="i1" onclick="f1()">自動LV0</button><br>
+<button id="i2" onclick="f2()">手動LV0</button><br>
+<button id="i3" onclick="f3()">●</button><br>
+
+<script>let p0=0,
+L1=0,p1=0,c1=0,
+L2=0,p2=0,c2=0;
+let e0=document.getElementById("i0");
+let e1=document.getElementById("i1");
+let e2=document.getElementById("i2");
+let e3=document.getElementById("i3");
+function f0(){e0.innerHTML=p0;}
+function f1(){if(c1<=p0){p0-=c1;L1+=1;p1=L1;c1=L1*L1;e1.innerHTML="自動LV"+L1+" 生産力"+p1+" LVUPcost"+c1;f0();}}
+function f2(){if(c2<=p0){p0-=c2;L2+=1;p2=L2*100;c2=L2*100;e2.innerHTML="手動LV"+L2+" 生産力"+p2+" LVUPcost"+c2;f0();}}
+function f3(){p0+=p2;f0();}
+setInterval(()=>{p0+=p1;f0();},400);
+
+</script></body></html>
